@@ -1,153 +1,287 @@
-/* General Reset */
-body, h1, h2, h3, p, ul, li, a, button, input, textarea {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
-}
+/* styles.css */
 
+/* Base styles */
 body {
-    line-height: 1.6;
-    color: #333;
-    background-color: #f9f9f9;
     margin: 0;
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+    background-color: #000;
+    line-height: 1.6;
 }
 
-/* Header Styling */
 header {
-    background-color: #4CAF50;
-    color: white;
-    padding: 1rem 2rem;
+    background: #111;
+    padding: 10px 20px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
 }
 
 nav ul {
     list-style: none;
+    margin: 0;
+    padding: 0;
     display: flex;
-    justify-content: center;
-}
-
-nav ul li {
-    margin: 0 1rem;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
+    gap: 15px;
 }
 
 nav ul li a:hover {
-    text-decoration: underline;
+    color: #ccc;
 }
 
-/* Section Styling */
 section {
-    padding: 2rem;
-    margin: 1rem auto;
-    max-width: 1200px;
-    background: white;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 900px;
+    background: #111;
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
 }
 
-#introduction {
-    text-align: center;
+h1, h2, h3 {
+    color: #fff;
+    border-bottom: 1px solid #333;
+    padding-bottom: 5px;
 }
 
-#introduction h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
+p {
+    color: #ccc;
+    margin: 10px 0;
 }
 
-#introduction .resume-button {
-    display: inline-block;
-    margin-top: 1rem;
-    padding: 0.8rem 1.5rem;
-    background-color: #4CAF50;
-    color: white;
+ul {
+    padding-left: 20px;
+}
+
+ul li {
+    margin: 5px 0;
+    color: #ddd;
+}
+
+a {
+    color: #1e90ff;
     text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #87cefa;
+}
+
+.resume-button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px 0;
+    background: #444;
+    color: #fff;
+    border: none;
     border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background 0.3s;
 }
 
-#introduction .resume-button:hover {
-    background-color: #45a049;
+.resume-button:hover {
+    background: #555;
 }
 
-/* Project Section */
 .project {
-    margin-bottom: 1.5rem;
-}
-
-.project h3 {
-    color: #4CAF50;
-    margin-bottom: 0.5rem;
-}
-
-.project p {
-    margin-bottom: 0.5rem;
+    margin: 15px 0;
+    padding: 15px;
+    background: #222;
+    border-radius: 5px;
 }
 
 .project a {
-    color: #4CAF50;
-    text-decoration: none;
-    font-weight: bold;
+    color: #87cefa;
 }
 
 .project a:hover {
-    text-decoration: underline;
+    color: #1e90ff;
 }
 
-/* Skills List */
-ul {
-    list-style-type: disc;
-    margin-left: 2rem;
-}
-
-/* Footer Styling */
-footer {
-    text-align: center;
-    background-color: #333;
-    color: white;
-    padding: 1rem;
-    margin-top: 2rem;
-}
-
-/* Contact Form */
 form {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 10px;
+}
+
+input, textarea, button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
 }
 
 input, textarea {
-    padding: 0.8rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    background: #222;
+    color: #fff;
     font-size: 1rem;
+}
+
+input:focus, textarea:focus {
+    outline: 1px solid #444;
 }
 
 button {
-    padding: 0.8rem;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
+    background: #444;
+    color: #fff;
+    font-weight: bold;
     cursor: pointer;
-    font-size: 1rem;
+    transition: background 0.3s;
 }
 
 button:hover {
-    background-color: #45a049;
+    background: #555;
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background: #111;
+    border-top: 1px solid #333;
+    margin-top: 20px;
+}
+
+footer p {
+    color: #888;
 }
 
 /* Responsive Styles */
-@media (max-width: 768px) {
-    nav ul {
+
+/* Mobile (up to 480px) */
+@media (max-width: 480px) {
+    header {
+        padding: 15px;
+    }
+
+    nav {
         flex-direction: column;
         align-items: center;
     }
 
+    nav ul {
+        display: block;
+        margin-top: 10px;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
     section {
-        padding: 1rem;
+        padding: 15px;
+    }
+
+    .resume-button {
+        width: 100%;
+        text-align: center;
+    }
+
+    .project {
+        padding: 10px;
+    }
+
+    .project a {
+        font-size: 0.9rem;
+    }
+
+    form {
+        width: 100%;
+    }
+
+    input, textarea, button {
+        font-size: 0.9rem;
+    }
+}
+
+/* Tablet (481px to 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+    header {
+        padding: 15px;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul {
+        display: block;
+        margin-top: 10px;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    section {
+        padding: 20px;
+    }
+
+    .resume-button {
+        width: 100%;
+        text-align: center;
+    }
+
+    .project {
+        padding: 15px;
+    }
+
+    .project a {
+        font-size: 1rem;
+    }
+
+    form {
+        width: 100%;
+    }
+
+    input, textarea, button {
+        font-size: 1rem;
+    }
+}
+
+/* Desktop (769px and above) */
+@media (min-width: 769px) {
+    nav ul {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    nav ul li {
+        margin: 0 15px;
+    }
+
+    section {
+        padding: 25px;
+    }
+
+    .resume-button {
+        width: auto;
+        text-align: center;
+    }
+
+    .project {
+        padding: 20px;
+    }
+
+    form {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    input, textarea, button {
+        font-size: 1rem;
     }
 }
